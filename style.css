@@ -1,0 +1,352 @@
+/* --- VARIABLES & RESET --- */
+:root {
+    --primary-color: #D4AF37; /* Emas */
+    --secondary-color: #1a1a1a; /* Hitam Pekat */
+    --text-light: #f4f4f4;
+    --text-dark: #333;
+    --bg-card: #252525;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* --- HEADER & NAV --- */
+header {
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 15px 0;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* PENGATURAN UKURAN LOGO */
+.logo-img {
+    height: 120px; /* Atur tinggi logo sesuai kebutuhan */
+    width: auto;
+    object-fit: contain;
+}
+
+nav ul { display: flex; gap: 25px; }
+nav a:hover { color: var(--primary-color); }
+
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary-color); }
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(26,26,26,1));
+}
+
+.hero-content { position: relative; z-index: 2; padding: 0 20px; }
+.hero h1 { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 10px; text-shadow: 2px 2px 4px #000; }
+.hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; }
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-primary { background-color: var(--primary-color); color: var(--secondary-color); }
+.btn-primary:hover { transform: scale(1.05); background-color: #fff; }
+
+/* --- SECTIONS GENERAL --- */
+.section { padding: 80px 0; }
+.bg-dark { background-color: #111; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* --- ABOUT --- */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.about-image img { width: 100%; border-radius: 10px; border: 2px solid var(--primary-color); }
+
+/* --- PROGRAMS --- */
+.program-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.card {
+    background: var(--bg-card);
+    padding: 35px 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, border-top 0.3s;
+    border-top: 3px solid transparent;
+}
+
+.card:hover { transform: translateY(-10px); border-top: 3px solid var(--primary-color); }
+.card-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+
+/* --- CONTACT --- */
+.contact-box {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.info-item { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.info-item i { color: var(--primary-color); font-size: 1.2rem; }
+
+/* --- FOOTER --- */
+footer { background: #000; padding: 25px 0; text-align: center; font-size: 0.9rem; border-top: 1px solid #333; }
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .menu-toggle { display: block; }
+    
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #000;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid var(--primary-color);
+    }
+
+    nav ul.active { display: flex; }
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-info { flex-direction: column; gap: 15px; }
+}
+/* --- SOCIAL MEDIA BUTTONS --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #fff !important;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Warna Khusus Tiap Platform */
+.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.tiktok { background: #000000; border: 1px solid #333; }
+.saweria { background: #faae2b; color: #000 !important; }
+
+/* --- FOUNDER SECTION --- */
+.founder-card {
+    background: var(--bg-card);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid #333;
+}
+
+.founder-img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 350px;
+}
+
+.founder-info {
+    padding: 40px;
+    width: 60%;
+}
+
+.founder-info h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.founder-role {
+    display: block;
+    font-size: 0.9rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.founder-info p {
+    font-style: italic;
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.founder-socials a {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.founder-socials a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Founder Card */
+@media (max-width: 768px) {
+    .founder-card {
+        flex-direction: column;
+    }
+    .founder-img {
+        width: 100%;
+        min-height: 300px;
+    }
+    .founder-info {
+        width: 100%;
+        padding: 30px 20px;
+        text-align: center;
+    }
+}
+/* --- SOCIAL MEDIA BUTTONS STYLE --- */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    color: #fff !important;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Warna Gradasi Resmi Instagram */
+.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.saweria {
+    background: #faae2b;
+    color: #000
+
+/* Tombol Kecil untuk Founder */
+.founder-socials {
+    margin-top: 20px;
+}
+
+.social-btn-small {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.3s;
+}
+
+.social-btn-small:hover {
+    opacity: 0.9;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 480px) {
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .social-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}
