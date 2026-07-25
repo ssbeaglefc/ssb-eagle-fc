@@ -34,3 +34,18 @@ window.addEventListener('scroll', () => {
         header.style.padding = '15px 0';
     }
 });
+/* ===========================
+   LOADING SCREEN
+=========================== */
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hidden");
+
+    }, 2000);
+
+});
