@@ -646,8 +646,7 @@ nav ul li a:hover::after{
 }
 /* --- RUNNING TEXT / MARQUEE --- */
 .running-text {
-    background-color: #D4AF37; /* Warna emas sesuai tema Eagle FC */
-    color: #0b0b0b;            /* Teks hitam agar kontras */
+    color: #FFFFFF;            /* Teks putih agar kontras */
     padding: 8px 0;
     font-weight: 700;
     font-size: 0.9rem;
