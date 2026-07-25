@@ -622,3 +622,25 @@ nav ul li a:hover::after{
     transform:translateY(-4px);
     box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
+.running-text {
+    background: #111;
+    color: #D4AF37;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.running-text {
+    animation: marquee 12s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
