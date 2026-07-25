@@ -669,3 +669,42 @@ nav ul li a:hover::after{
         transform: translateX(-100%);
     }
 }
+/* --- RUNNING TEXT TRANSPARENT & SEAMLESS --- */
+.running-text-wrapper {
+    width: 100%;
+    overflow: hidden;       /* Hanya menyembunyikan area luar wrapper */
+    background: transparent; /* Latar belakang transparan */
+    padding: 8px 0;
+}
+
+.running-text {
+    display: flex;          /* Membuat span berdampingan horizontal */
+    width: max-content;     /* Lebar menyesuaikan total panjang teks */
+    white-space: nowrap;    /* KUNCI: Mencegah teks turun baris */
+    
+    /* Animasi berjalan mulus */
+    animation: scroll-seamless 30s linear infinite;
+}
+
+.running-text span {
+    color: #D4AF37;         /* Warna emas Eagle FC */
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding-right: 50px;    /* Jarak antar teks pertama dan kedua */
+}
+
+/* Definisi Animasi Seamless */
+@keyframes scroll-seamless {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Bergerak sejauh 50% lebar total (setara 1 set teks) */
+        transform: translateX(-50%); 
+    }
+}
+
+/* Pause saat disentuh/dihover (opsional, bagus untuk UX mobile) */
+.running-text:hover {
+    animation-play-state: paused;
+}
