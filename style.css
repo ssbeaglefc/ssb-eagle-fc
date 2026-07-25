@@ -766,3 +766,92 @@ nav ul li a:hover::after{
         grid-template-columns:1fr;
     }
 }
+/* ===========================
+   TAMPILAN DESKTOP
+=========================== */
+@media (min-width: 992px) {
+
+    .container{
+        width:90%;
+        max-width:1200px;
+        margin:auto;
+    }
+
+    /* Hero */
+    .hero{
+        height:100vh;
+    }
+
+    .hero-content h1{
+        font-size:70px;
+    }
+
+    .hero-content p{
+        font-size:20px;
+        max-width:700px;
+        margin:auto;
+    }
+
+    /* Tentang */
+    .about-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:50px;
+        align-items:center;
+    }
+
+    /* Program */
+    .program-cards{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:30px;
+    }
+
+    /* Jadwal */
+    .schedule-grid{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:25px;
+    }
+
+    /* Dokumentasi */
+    .gallery-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:20px;
+    }
+
+    /* Kontak */
+    .contact-box{
+        max-width:900px;
+        margin:auto;
+    }
+
+    /* Pendiri */
+    .founder-card{
+        display:flex;
+        align-items:center;
+        gap:40px;
+    }
+
+    .founder-img{
+        width:280px;
+    }
+
+    /* Menu Desktop */
+    .menu-toggle{
+        display:none;
+    }
+
+    nav ul{
+        display:flex !important;
+        position:static;
+        flex-direction:row;
+        background:none;
+        box-shadow:none;
+    }
+
+    nav ul li{
+        margin-left:25px;
+    }
+}
